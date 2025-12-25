@@ -1,0 +1,15 @@
+// ミックスイン
+// @mixin 自分で名前をつける{}
+
+@mixin mq{
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+// （使用例）この中の記述がcontentに入る感じ
+// .sample{
+// @include mq{
+//     background-color: #fff;
+// }
+// }
