@@ -1,3 +1,4 @@
+// @forward './1-settings/index.scss';と書かなくても「index」なら省略できる
 @forward './1-settings/';
 @forward './2-tools/';
 @forward './3-generic/';

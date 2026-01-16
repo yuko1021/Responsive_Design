@@ -9,13 +9,20 @@ html {
 
 body {
     font-family: var(--font-family-ja);
-    font-size: 1.4rem; // 14px
+    font-size: 1.4rem; // 10 X 1.4 = 14px
     font-weight: 400; // normal
     line-height: 1.7;
     color: var(--text-color);
+    margin: 0;
+    padding-top: 70px ;
 }
 
 a {
     color: var(--main-color);
     text-decoration: none;
+}
+
+// 画像の初期値はautoになっているけど、念の為。もしhtmlでサイズ指定があった場合に縦横比が崩れないように
+img{
+    height: auto;
 }
