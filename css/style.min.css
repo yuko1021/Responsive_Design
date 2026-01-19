@@ -246,7 +246,7 @@ img {
   width: 44px;
   height: 44px;
   border: none;
-  background: yellow;
+  background: none;
   flex-shrink: 0;
   position: relative;
 }
@@ -272,11 +272,18 @@ img {
   inset: 0;
   background-color: var(--main-color);
   display: flex;
-  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
 }
+body.is-open .l-header__nav {
+  visibility: visible;
+  opacity: 1;
+}
+
 .l-header__navClose {
   position: absolute;
   right: 16px;
@@ -343,7 +350,6 @@ img {
     display: none;
   }
   .l-header__nav {
-    display: flex;
     position: static;
     background-color: transparent;
     flex-direction: row;
