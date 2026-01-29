@@ -1,0 +1,179 @@
+// ショップ情報
+@use '../2-tools/mixin' as *;
+
+.p-shop {
+    padding-block: 64px;
+
+
+
+
+    &__information {
+        margin-block: 56px 40px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        //   align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+
+    }
+
+    &__descriptionTitle {
+        margin: 0;
+    }
+
+
+    &__descriptionText {
+
+        font-size: 1.5rem;
+        line-height: 2.55rem;
+        margin: 0;
+        color: var(--text-color);
+
+
+        p {
+
+            // 段落同士の間隔(最初の子供意外)
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+
+    }
+
+    &__descriptionContact {
+        width: 196px;
+        height: 54px;
+        border-style: none;
+        margin-inline: auto;
+        background-color: var(--sub-color1);
+        border-radius: 8px;
+
+
+
+        p {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // 8-4.5=3.5
+            gap: 3.5px;
+        }
+
+        p::before {
+            content: '';
+            display: inline-block;
+            background-color: var(--main-color);
+            width: 24px;
+            height: 24px;
+            mask-position: center center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-image: url('../img/common/icon-phone.svg');
+        }
+    }
+
+    &__informationDetail {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &--dt {
+            font-weight: 500;
+        }
+
+        &--dd {
+            font-weight: 400;
+            margin-top: 8px;
+
+            // &::after {
+            //     content: '';
+            //     display: block;
+            //     height: 1px;
+            //     width: 100%;
+            //     border: 1px dashed var(--gray1);
+            //     margin-top: 8px;
+            // }
+        }
+    }
+
+    &__informationDetail--dl {
+        &::after {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            border: 1px dashed var(--gray1);
+            margin-top: 8px;
+        }
+    }
+
+
+
+
+    &__informationMapLink {
+        margin-inline: auto;
+        margin-top: 24px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 60px;
+        border: 1px solid var(--gray2);
+
+        color: var(--text-color);
+
+        &::before {
+            mask-image: url(../img/common/icon-outerlink.svg);
+            // vertical-align: middle;
+        }
+    }
+
+    @include mq {
+        &__content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 56px;
+        }
+
+        &__information {
+            grid-column: 2/3;
+            grid-row: 1;
+            margin-block: 0;
+        }
+
+
+        &__informationDetail--dl div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        &__informationDetail--dd{
+            margin-top: 0px;
+        }
+
+
+        &__informationMap {
+            grid-column: 1/2;
+            grid-row: 1;
+        }
+
+        &__descriptionContact {
+            margin-inline: 0;
+        }
+
+        &__informationMapLink {
+            margin-inline: auto 0;
+        }
+
+    }
+
+
+}

@@ -1,0 +1,170 @@
+// コンセプトページ
+@use '../2-tools/mixin' as *;
+
+
+
+.p-component {
+    padding-block: 64px;
+
+    .c-sectionTitle {
+        margin-bottom: 56px;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+        text-align: center;
+
+        p {
+            line-height: 1.7;
+
+            // 段落同士の間隔(最初の子供意外)
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+    }
+
+
+
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 2.4rem;
+    }
+
+    &__listItem {
+        // flex-basis: 15.4rem;
+        width: 15.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+
+        img {
+            display: block;
+            width: 100%; // 親要素の幅いっぱいに広がる
+            height: auto;
+            border-radius: 100rem;
+            object-fit: cover;
+
+            min-width: 15.2rem;
+            max-width: 26rem;
+
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+    }
+
+    @include mq {
+        &__list {
+            gap: 4rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        // &__listItem {
+        //     // flex-basis: 26rem;
+        //     // width: 26rem;
+
+        //     width: 100%;
+        // }
+    }
+}
+
+
+
+//４つの約束
+
+.p-promise {
+    grid-template-columns: 1fr;
+    background-color: var(--base-color);
+    padding-block: 64px;
+
+    &__lists {
+        // 56+25=81
+        margin-top: 81px;
+        display: grid;
+        align-items: start;
+        gap: 5.7rem;
+        position: relative;
+
+    }
+
+
+    &__list {
+        background-color: var(--white);
+        border: 1pt solid var(--main-color);
+        border-radius: .8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+
+
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+                &::before {
+                    content: '#{$i}'; // 1, 2, 3, 4 が順番に入るÏ
+                    /* --- 以下、共通スタイル --- */
+                    font-size: 3rem;
+                    color: var(--white);
+                    background-color: var(--main-color);
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; // 上下中央に追加
+                    margin-top: -50px;
+                    margin-inline: auto;
+                }
+            }
+        }
+
+    }
+
+    // &__listTitle,
+    // &__listText {
+    //     // translate: 0 -50px;
+    //     display: flex;
+    // }
+
+    &__listTitle p {
+        font-size: 1.5rem;
+    
+        margin-block: 1.5rem 1.6rem;
+        color: var(--main-color);
+        font-weight: 500;
+    }
+
+    &__listText p {
+        font-size: 1.4rem;
+    
+        margin-top: 0;
+    }
+
+
+
+
+
+    @include mq {
+
+       
+
+
+        &__lists {
+
+            grid-template-columns: 1fr 1fr;
+            
+
+        }
+    }
+
+}

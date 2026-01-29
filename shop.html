@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -77,16 +79,89 @@
         </nav>
     </header>
 
-    
-    <!-- ページタイトル -->
-    <div class="c-pageTitle">
-        <div class="c-pageTitle__heading">
-            <h1 class="c-pageTitle__headingText">Title</h1>
+
+    <main>
+        <!-- ページタイトル -->
+        <div class="c-pageTitle">
+            <div class="c-pageTitle__heading">
+                <h1 class="c-pageTitle__headingText">Title</h1>
+            </div>
+            <div class="c-pageTitle__img">
+                <img src="img/shop/page-title-shop.webp" alt="">
+            </div>
         </div>
-        <div class="c-pageTitle__img">
-            <img src="img/concept/page-title-concept.webp" alt="">
+
+        <!-- セクションタイトル -->
+        <div class="p-shop">
+            <div class="l-container">
+                <h2 class="c-sectionTitle">
+                    <span class="c-sectionTitle__ja">店舗情報
+                    </span>
+                    <span class="c-sectionTitle__en">Shop</span>
+                </h2>
+
+                <div class="p-shop__content l-columns__col2--pc">
+                    <div class="p-shop__information">
+                        <div class="p-shop__description">
+                    
+                            <h4 class="p-shop__descriptionTitle c-headingSub">
+                                AKARI organic オリジナルショップ
+                            </h4>
+                            <div class="p-shop__descriptionText">
+                                <p>AKARI organicの専門アドバイザーがカウンセリングを行い、お肌のタイプ・季節に合わせてあなただけのオリジナルコスメを調合いたします。</p>
+                                <p>完全予約制となっています。お電話にてご予約ください。</p>
+                            </div>
+                            <button class="p-shop__descriptionContact" type="button">
+                                <p>06-0000-00xx</p>
+                            </button>
+                        </div>
+                        <dl class="p-shop__informationDetail">
+                            <div class="p-shop__informationDetail--dl">
+                                <div>
+                                    <dt class="p-shop__informationDetail--dt">住所</dt>
+                                    <dd class="p-shop__informationDetail--dd">大阪市北区鶴野町7-77月夜ビルB1F</dd>
+                                </div>
+                            </div>
+                            <div class="p-shop__informationDetail--dl">
+                                <div>
+                                    <dt class="p-shop__informationDetail--dt">営業時間</dt>
+                                    <dd class="p-shop__informationDetail--dd">10:00〜20:30</dd>
+                                </div>
+                            </div>
+                            <div class="p-shop__informationDetail--dl">
+                                <div>
+                                    <dt class="p-shop__informationDetail--dt">定休日</dt>
+                                    <dd class="p-shop__informationDetail--dd">火曜日</dd>
+                                </div>
+                            </div>
+                            <div class="p-shop__informationDetail--dl">
+                                <div>
+                                    <dt class="p-shop__informationDetail--dt">クレジットカード</dt>
+                                    <dd class="p-shop__informationDetail--dd">可</dd>
+                                </div>
+                            </div>
+                            <div class="p-shop__informationDetail--dl">
+                                <div>
+                                    <dt class="p-shop__informationDetail--dt">駐車場</dt>
+                                    <dd class="p-shop__informationDetail--dd">なし。近隣にコインパーキングあり。</dd>
+                                </div>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="p-shop__informationMap">
+                        <img src="img/shop/shop-map.webp" alt="">
+                        <a class="p-shop__informationMapLink c-btn c-btn--icon " href="#">
+                            Google Map
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-    </div>
+    </main>
+
+
 
 
     <!-- 下部オンラインショップlink -->
@@ -122,6 +197,7 @@
             Copyright &copy; AKARI Organic All Rights Reserved.
         </small>
     </footer>
+
 
 </body>
 

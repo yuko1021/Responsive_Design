@@ -1,0 +1,213 @@
+// プロダクトページ
+@use '../2-tools/mixin' as *;
+
+.p-productItem {
+    padding-block: 64px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    // .l-container {
+    //     position: relative;
+    // }
+
+    &__list {
+        margin-top: 56px;
+
+        // gap: 40px;
+    }
+
+
+    &__listItem {
+        // position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-inline: -24px;
+
+
+        &:not(:last-child) {
+           margin-bottom: 40px;
+        }
+        
+    }
+
+
+
+    // &__listImg {
+    //     // margin-inline: -24px;
+    //     //   margin-inline: auto;
+    //     width: 100%;
+
+    // }
+
+    &__listDescription {
+        background-color: var(--white);
+        width: 327px;
+        height: auto;
+        padding: 24px;
+        opacity: 0.7;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 250px;
+        margin-top: -24px;
+
+
+
+    }
+
+
+    &__listTitle {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        
+    }
+
+    &__listTitleJa {
+        font-size: 2.2rem;
+        color: var(--text-color);
+        text-align: center;
+        margin-block-start: 0;
+        line-height: 1;
+    }
+
+    &__listTitleEn {
+        font-size: 1.4rem;
+        color: var(--text-color);
+        text-align: center;
+        margin-block-start: 0;
+        line-height: 1;
+
+    }
+
+    &__listText {
+        margin-block: 16px 24px;
+
+        &::before {
+            content: '';
+            display: block;
+            background-color: var(--text-color);
+            height: 2px;
+            width: 279px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__listlink {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // width: 200px;
+        // height: 60px;
+        // background-color: var(--white);
+        // border: 1px solid var(--text-color);
+        // color: var(--text-color);
+        // font-size: 1.8rem;
+        //  background-color: rgba(255 255 255/0);
+         background-color: var(--white);
+         
+    }
+    
+
+    &__listImg {
+        aspect-ratio: 375 / 230;
+        /* ここで「横：縦」の比率を指定 */
+        object-fit: cover;
+    }
+
+
+
+    @include mq {
+        &__listItem {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+
+            justify-content: center;
+            align-items: center;
+        
+            width: auto;
+            margin-left: -24px;
+            margin-right: 0;
+
+        }
+
+        &__listDescription {
+            // position: static;
+            grid-column: 7 / 12;
+            grid-row: 1;
+
+            padding: 24px;
+            opacity: 0.7;
+            text-align: start;
+
+
+            justify-content: start;
+            align-items: start;
+            width: 459px;
+            height: auto;
+            margin-top: 0;
+            // margin-left: -10px;
+            
+
+        }
+
+
+
+        &__listTitle {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &__listTitleJa,
+        &__listTitleEn {
+            margin: 0;
+        }
+
+        &__listText {
+            &::before {
+                content: '';
+
+                height: 2px;
+                width: 411px;
+            }
+        }
+
+        &__listImg {
+
+            grid-column: 1 / 9;
+            grid-row: 1;
+            aspect-ratio: 899 / 520;
+            /* ここで「横：縦」の比率を指定 */
+            object-fit: cover;
+        }
+
+        &__listItem:nth-child(2) {
+        
+                margin-left: 0;
+                margin-right: -24px;
+
+                .p-productItem__listDescription {
+                    grid-column: 1 / 6;
+                    grid-row: 1;
+                    z-index: 1;
+                }
+
+                .p-productItem__listImg {
+                    grid-column: 5 / 13;
+                    grid-row: 1;
+                    
+                }
+            
+        }
+
+
+    }
+}

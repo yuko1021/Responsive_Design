@@ -32,6 +32,7 @@
         width: 140px;
         margin: 0;
         // 親要素が縮んでもこの（中の）要素あ縮まない！
+        // フレックスは基本縮む
         flex-shrink: 0;
     }
 
@@ -40,8 +41,7 @@
         width: 44px;
         height: 44px;
         border: none;
-        // background: none;
-        background: yellow;
+        background: none;
         flex-shrink: 0;
         position: relative;
     }
@@ -58,26 +58,41 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        // 「自分の横幅の半分（-50%）」左に、「自分の高さの半分（-50%）」上に動かす
         translate: -50% -50%;
     }
+
     &__navBtn::before {
+        // 今はtop50%の位置で、そこから9px上に移動したい
         top: calc(50% - 9px);
     }
+
     &__navBtn::after {
         top: calc(50% + 9px);
     }
 
     // 【SP】ナビゲーション内容
     &__nav {
+        // スクロールしても固定
         position: fixed;
         inset: 0; //top, bottom, right, left : 0
         background-color: var(--main-color);
         display: flex;
-        display: none;
+        // display: none;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         // place-items: center; // justify-items, align-items : center
+        visibility: hidden;
+        opacity: 0;
+        // visibilityはtransitionの対象にはならない
+        transition: 0.3s;
+    }
+
+    // 「@at-root」つけないと.l-header body.is-open .l-header__navになっちゃう
+    @at-root body.is-open &__nav{
+        visibility: visible;
+        opacity: 1;
     }
 
     // 【SP】閉じるボタン
@@ -91,6 +106,7 @@
         border: none;
         background: none;
     }
+
     // 【SP】閉じるボタン中身
     &__navClose::before,
     &__navClose::after {
@@ -103,14 +119,16 @@
         left: 50%;
         translate: -50% -50%;
     }
+
     &__navClose::before {
         rotate: 45deg;
     }
+
     &__navClose::after {
         rotate: -45deg;
     }
 
-    
+
     &__navLogo {
         width: 110px;
         margin-bottom: 16px;
@@ -159,23 +177,24 @@
     @include mq {
         padding-inline: 16px 0;
 
-        // ボタン
+        // ボタンはPCでは消す
         &__navBtn {
             display: none;
         }
 
         // ナビゲーション
         &__nav {
-            // ★ここを追加！消したものを再び表示させる
-            display: flex;
             position: static;
             // position:initial でもOK
+            // 背景透明
             background-color: transparent;
             flex-direction: row;
-            // 余っているスペースをどれだけもらうか
+            // 余っているスペースをどれだけもらうか,logo以外の幅をすべてもらう
             flex-grow: 1;
             justify-content: end;
             height: 100%;
+            visibility: visible;
+            opacity: 1;
         }
 
         &__navClose {
@@ -196,6 +215,7 @@
         }
 
         &__navItem {
+            // flexのまとめ指定
             //flex- grow:0（伸びない） shrink:1（縮む！） basis(ベースサイズ)
             flex: 0 1 140px;
         }
@@ -204,6 +224,7 @@
             padding-block: 0;
             color: var(--text-color);
             height: 100%;
+            // この中でも「HOME」[ホーム]をセンター合わせ！
             display: flex;
             align-items: center;
             flex-direction: column;

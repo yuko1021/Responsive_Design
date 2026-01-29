@@ -1,0 +1,134 @@
+// プロダクト詳細ページ
+@use '../2-tools/mixin' as *;
+
+.p-productEachItem {
+    padding-block: 64px;
+}
+
+.p-productDetail {
+    margin-top: 56px;
+
+    &__img {
+        width: 100%;
+        min-width: 327px;
+
+    }
+
+    &__description {
+        margin-block: 32px;
+        line-height: 1;
+    }
+
+    &__text {
+        margin-block: 0 24px;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 8px;
+    }
+
+    &__titleJa {
+        font-size: 2.2rem;
+        color: var(--text-color);
+        margin: 0;
+    }
+
+    &__titleEn {
+        font-size: 2rem;
+        color: var(--gray1);
+        margin: 0;
+    }
+
+    &__volume {
+        font-size: 1.5rem;
+        color: var(--text-color);
+        margin-bottom: 16px;
+    }
+
+    &__price {
+        margin-bottom: 32px;
+        font-size: 2.4rem;
+        color: var(--main-color);
+
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center; // 中身（aタグ）を左右中央に寄せる
+
+    }
+
+    &__instruction dt {
+        margin-bottom: 24px;
+    }
+
+    &__instruction dd {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        color: var(--text-color);
+
+    }
+
+    &__instruction {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+    }
+
+
+    @include mq {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        // grid-template-rows: 1fr 1fr;
+        width: 100%;
+        column-gap: 32px;
+        row-gap: 40px;
+
+        &__img {
+            grid-column: 1 / 6;
+            grid-row: 1/2;
+        }
+
+        &__description {
+            grid-column: 6 / 13;
+            grid-row: 1/2;
+        }
+
+        &__instruction {
+            grid-column: 1 / 13;
+            grid-row: 2/3;
+            flex-direction: row;
+
+            div {
+                width: 50%;
+            }
+        }
+
+        &__img {
+
+            margin-top: 0;
+        }
+
+        &__description {
+            margin-block: 0;
+        }
+
+        &__link {
+           
+            justify-content: start; // 中身（aタグ）を左右中央に寄せる
+
+        }
+
+
+    }
+
+}

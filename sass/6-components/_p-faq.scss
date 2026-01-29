@@ -1,0 +1,121 @@
+// FAQページ
+@use '../2-tools/mixin' as *;
+
+
+
+.p-faq {
+
+    padding-block: 64px;
+
+    &__text {
+        margin-block: 56px 29px;
+        text-align: center;
+    }
+
+    &__list {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__listItem {
+        p {
+            margin: 0;
+        }
+
+        &.answer-open {
+
+            // 「is-open」が付くと（クリックされると）時のスタイル
+            span::after {
+                visibility: none;
+                opacity: 0;
+                // background-color: aqua;
+            }
+
+            .p-faq__listA {
+                // padding: 0 1rem;
+                overflow: initial;
+                height: auto;
+                transition: 1s linear;
+                display: block;
+                // マージンbottomは 24-16=8
+                margin-top: 24px;
+            }
+        }
+    }
+
+
+    &__listQ {
+        margin: 0;
+        display: flex;
+        background-color: var(--sub-color1);
+        color: var(--main-color);
+        justify-content: space-between;
+        padding-left: 16px;
+        align-items: center
+    }
+
+    &__listBtn {
+        background-color: var(--main-color);
+        width: 45px;
+        height: 45px;
+        border-style: none;
+        position: relative;
+
+        span {
+            display: block;
+            width: 23px;
+            height: 1px;
+            background-color: var(--white);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+
+
+            &::after {
+                content: "";
+                display: block;
+                width: 23px;
+                height: 1px;
+                background-color: var(--white);
+                rotate: 90deg;
+            }
+        }
+
+
+    }
+
+
+    &__listA {
+        // padding: 0 1rem;
+        overflow: hidden;
+        height: 0;
+        transition: .3s linear;
+        // transition-behavior: allow-discrete;
+        display: none;
+
+    }
+
+    @include mq {
+        &__list {
+            gap: 16px;
+        }
+
+        &__listItem {
+            &.answer-open {
+                .p-faq__listA {
+                    // マージンbottomは 24-16=8
+                    margin-block: 24px 8px;
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+}

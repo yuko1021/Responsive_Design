@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -77,16 +79,71 @@
         </nav>
     </header>
 
-    
-    <!-- ページタイトル -->
-    <div class="c-pageTitle">
-        <div class="c-pageTitle__heading">
-            <h1 class="c-pageTitle__headingText">Title</h1>
+
+    <main>
+        <!-- ページタイトル -->
+        <div class="c-pageTitle">
+            <div class="c-pageTitle__heading">
+                <h1 class="c-pageTitle__headingText">Products</h1>
+            </div>
+            <div class="c-pageTitle__img">
+                <img src="img/products/page-title-product-list.webp" alt="">
+            </div>
         </div>
-        <div class="c-pageTitle__img">
-            <img src="img/concept/page-title-concept.webp" alt="">
+
+
+        <!-- セクションタイトル -->
+        <div class="p-productItem">
+            <div class="l-container">
+                <!-- 見出しタイトル -->
+                <h2 class="c-sectionTitle">
+                    <span class="c-sectionTitle__ja">製品一覧</span>
+                    <span class="c-sectionTitle__en">Item List</span>
+                </h2>
+                <!-- リスト -->
+                <section class="p-productItem__list">
+
+                    <!-- 製品リスト x3 -->
+                    <div class="p-productItem__listItem l-columns__col12--pc">
+                        <img class="p-productItem__listImg" src="../img/products/item-lotion.webp" alt="">
+                        <div class="p-productItem__listDescription">
+                            <div class="p-productItem__listTitle">
+                                <p class="p-productItem__listTitleJa"> 敏感肌用化粧水</p>
+                                <p class="p-productItem__listTitleEn">Lotion</p>
+                            </div>
+                            <p class="p-productItem__listText">植物エキスが肌をきめ細やかに整え滑らかにし、たっぷりと潤いを与えます。</p>
+                            <a class="p-productItem__listlink c-btn" href="productDetails.html">More</a>
+                        </div>
+                    </div>
+                    <div class="p-productItem__listItem l-columns__col12--pc">
+                        <img class="p-productItem__listImg" src="img/products/item-milk.webp" alt="">
+                        <div class="p-productItem__listDescription">
+                            <div class="p-productItem__listTitle">
+                                <p class="p-productItem__listTitleJa"> 敏感肌用乳液</p>
+                                <p class="p-productItem__listTitleEn">Moisture Milk</p>
+                            </div>
+                            <p class="p-productItem__listText">天然成分が乾燥から肌を守り、ふっくらとしたツヤ肌が長時間続きます。</p>
+                           <a class="p-productItem__listlink c-btn" href="productDetails.html">More</a>
+                        </div>
+                    </div>
+                    <div class="p-productItem__listItem l-columns__col12--pc">
+                        <img class="p-productItem__listImg" src="img/products/item-soap.webp" alt="">
+                        <div class="p-productItem__listDescription">
+                            <div class="p-productItem__listTitle">
+                                <p class="p-productItem__listTitleJa"> ハンドメイドソープ</p>
+                                <p class="p-productItem__listTitleEn">Handmade Soap</p>
+                            </div>
+                            <p class="p-productItem__listText">天然クレイ入りの泡が肌を包み、潤いを守りながらさっぱり洗い流します。</p>
+                            <a class="p-productItem__listlink c-btn" href="productDetails.html">More</a>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
+    </main>
+
+
 
 
     <!-- 下部オンラインショップlink -->

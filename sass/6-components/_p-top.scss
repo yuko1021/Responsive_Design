@@ -98,29 +98,37 @@
             // row,culの順
             gap: 32px 40px;
         }
-    }
 
-    &__subSectionImg{
-        // 画像で左側を占有すると、そのほかの要素はあまりのセルに自動で入る
-        // １線−２線の間、１線−4線の間
-        grid-column: 1/2;
-        grid-row: 1/4;
-    }
+        
+            &__subSectionImg{
+                // 画像で左側を占有すると、そのほかの要素はあまりのセルに自動で入る
+                // １線−２線の間、１線−4線の間
+                grid-column: 1/2;
+                grid-row: 1/4;
+            }
+        
+            .c-heading{
+                margin-block: 0;
+            }
+            
+        
+            &__subSectionText{
+                margin-block: 0;
+            }
+            
+            &__subSectionLink{
+                text-align: start;
+            }
+        
+            // オリジナルショップ
+            &__subSection--shop &__subSectionImg{
+                grid-column: 2/3;
+            }
 
-    .c-heading{
-        margin-block: 0;
-    }
 
-    &__subSectionText{
-        margin-block: 0;
-    }
-    
-    &__subSectionLink{
-        text-align: start;
-    }
 
-    // オリジナルショップ
-    &__subSection--shop &__subSectionImg{
-        grid-column: 2/3;
     }
 }
+
+
+
